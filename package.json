@@ -13,15 +13,19 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "npm-run-all --parallel=false start:*",
+    "start": "npm-run-all --parallel=false start:*",
     "start:erste-market-fetch": "cd packages/erste-market-fetch && npm start",
     "start:etf-fetch": "cd packages/etf-fetch && npm start",
+    "compile-packages": "npm-run-all --parallel compile:*",
+    "compile:logger": "cd packages/logger && npm run compile",
+    "compile:utils": "cd packages/utils && npm run compile",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint 'packages/**/*.ts'",
     "lint:fix": "eslint '**/*.{ts}' --fix",
     "dependency-audit": "audit-ci --config audit-ci.json",
     "prettier": "npx prettier . --write",
-    "prepare": "husky"
+    "prepare": "husky",
+    "postinstall": "npm run compile-packages"
   },
   "devDependencies": {
     "@types/node": "^20.11.20",
