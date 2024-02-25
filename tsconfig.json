@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "module": "ES6",
+    "esModuleInterop": true,
+    "target": "es2020",
+    "sourceMap": true,
+    "outDir": "dist",
+    "types": ["node"],
+    "typeRoots": ["node_modules/@types"],
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "declaration": true,
+    "declarationMap": true
+  },
+  "include": ["/**/*.ts"],
+  "exclude": ["node_modules"],
+  "lib": ["es2020"],
+  "ts-node": {
+    "esm": true
+  }
+}

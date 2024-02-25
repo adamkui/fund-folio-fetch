@@ -1,0 +1,41 @@
+{
+  "name": "fund-folio-fetch",
+  "version": "1.0.0",
+  "private": "true",
+  "description": "A monorepo of applications that collect data of investment funds and ETFs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adamkui/fund-folio-fetch"
+  },
+  "author": "Kui Adam",
+  "license": "ISC",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm-run-all --parallel start:*",
+    "start:etf-fetch": "cd packages/etf-fetch && npm start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint 'packages/**/*.ts'",
+    "lint:fix": "eslint '**/*.{ts}' --fix",
+    "dependency-audit": "audit-ci --config audit-ci.json",
+    "prettier": "npx prettier . --write",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.20",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "audit-ci": "^6.6.1",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-deprecation": "^2.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-sonarjs": "^0.24.0",
+    "husky": "^9.0.11",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3"
+  }
+}

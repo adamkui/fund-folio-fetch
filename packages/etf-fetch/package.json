@@ -1,0 +1,21 @@
+{
+  "name": "etf-fetch",
+  "version": "1.0.0",
+  "private": "true",
+  "description": "Collects ETF data from justetf.com",
+  "main": "index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "npx tsx index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adam Kui",
+  "license": "ISC",
+  "dependencies": {
+    "@fund-folio-fetch/axios": "^1.6.7",
+    "@fund-folio-fetch/logger": "^1.0.0",
+    "axios": "^1.6.7",
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.4.5"
+  }
+}
