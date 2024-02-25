@@ -32,6 +32,8 @@
     }
   },
   "rules": {
+    "max-len": [1, { "code": 140 }],
+    "import/prefer-default-export": [0],
     "quotes": ["off"],
     "import/no-unresolved": "error",
     "import/extensions": "off",

@@ -1,0 +1,19 @@
+{
+  "name": "@fund-folio-fetch/utils",
+  "version": "1.0.0",
+  "description": "Utils for the monorepo",
+  "main": "dist/index.js",
+  "scripts": {
+    "compile": "tsc -b",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adam Kui",
+  "license": "ISC",
+  "module": "true",
+  "dependencies": {
+    "pino": "^8.19.0"
+  },
+  "devDependencies": {
+    "pino-pretty": "^10.3.1"
+  }
+}

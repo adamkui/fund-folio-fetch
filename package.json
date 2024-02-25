@@ -13,7 +13,8 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "npm-run-all --parallel start:*",
+    "dev": "npm-run-all --parallel=false start:*",
+    "start:erste-market-fetch": "cd packages/erste-market-fetch && npm start",
     "start:etf-fetch": "cd packages/etf-fetch && npm start",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint 'packages/**/*.ts'",

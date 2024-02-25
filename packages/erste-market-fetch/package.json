@@ -1,8 +1,8 @@
 {
-  "name": "@fund-folio-fetch/etf-fetch",
+  "name": "@fund-folio-fetch/erste-market-fetch",
   "version": "1.0.0",
   "private": "true",
-  "description": "Collects ETF data from justetf.com",
+  "description": "Collects investment fund data from erstemarket.hu website",
   "main": "index.ts",
   "type": "module",
   "scripts": {
