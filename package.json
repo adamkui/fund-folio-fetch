@@ -2,7 +2,7 @@
   "name": "fund-folio-fetch",
   "version": "1.0.0",
   "private": "true",
-  "description": "A monorepo of applications that collect data of investment funds and ETFs",
+  "description": "fund-folio-fetch is a monorepo of simple node.js applications, collecting data (currently fact sheets only) of investment funds and exchange traded funds (ETFs) from given websites.",
   "repository": {
     "type": "git",
     "url": "https://github.com/adamkui/fund-folio-fetch"
