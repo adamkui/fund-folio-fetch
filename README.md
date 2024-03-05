@@ -7,7 +7,7 @@ fund-folio-fetch is a monorepo of simple node.js applications, collecting data (
 Currently it can process:
 
 - any ETFs that can be found on justetf.com
-- hungarian investment funds, found on erstemarket.hu
+- hungarian mutual funds, found on erstemarket.hu
 
 ## Getting Started
 
