@@ -2,6 +2,7 @@ import { createModuleLogger } from '@fund-folio-fetch/logger';
 import { asyncForEach } from '@fund-folio-fetch/utils';
 import axios from 'axios';
 import * as cheerio from 'cheerio';
+import { addMonths } from 'date-fns';
 import dotenv from 'dotenv';
 import { once } from 'events';
 import * as fs from 'fs';
@@ -17,7 +18,7 @@ const FUND_ARR_BY_ISIN = process.env.FUND_ARR_BY_ISIN.split(',');
 const FUND_ARRAY_LENGTH = FUND_ARR_BY_ISIN.length;
 const TODAY = new Date();
 const CURRENT_YEAR = TODAY.getFullYear();
-const CURRENT_MONTH = TODAY.toLocaleString('default', { month: 'short' });
+const CURRENT_MONTH = addMonths(TODAY, -1).toLocaleString('default', { month: 'short' });
 const FACT_SHEETS_FOLDER_PATH = `${homedir}/documents/fact-sheets`;
 const ERSTE_MARKET_FUNDS_FOLDER_PATH = `${FACT_SHEETS_FOLDER_PATH}/erste-market-funds`;
 const CURRENT_YEAR_FOLDER = `${ERSTE_MARKET_FUNDS_FOLDER_PATH}/${CURRENT_YEAR}`;
@@ -36,7 +37,7 @@ const capitalizeHeading = (heading: string) => heading.toLowerCase().replace(/(^
     }
   });
 
-  logger.info(`Found ${FUND_ARRAY_LENGTH} ETF to process: ${FUND_ARR_BY_ISIN}`);
+  logger.info(`Found ${FUND_ARRAY_LENGTH} funds to process: ${FUND_ARR_BY_ISIN}`);
 
   asyncForEach(FUND_ARR_BY_ISIN, async (fundByIsin, index) => {
     const loggerIndex = `${index + 1}/${FUND_ARRAY_LENGTH}`;
@@ -50,7 +51,7 @@ const capitalizeHeading = (heading: string) => heading.toLowerCase().replace(/(^
 
       const productWebsite = await axios.get(ersteMarketSearchUrl);
       const $ = cheerio.load(productWebsite.data);
-      const documentTitle = capitalizeHeading($('h1#etf-title').text());
+      const documentTitle = capitalizeHeading($('h1.heading').text());
       const documentURL = $(`a:contains("${MONTHLY_REPORT_TITLE}")`).attr().href;
       const fullURL = `${ERSTE_MARKET_BASE_URL}${documentURL}`;
 
